@@ -13,7 +13,7 @@ const numsTimesTwo = nums.map((num) => {
     return num * 2
 })
 
-console.log(numsTimesTwo)
+console.log(numsTimesTwo);
 
 
 
@@ -28,15 +28,15 @@ console.log(numsTimesTwo)
 
 const pizzaToppings = ['Pineapple', 'Olives', 'Anchovies'];
 
-const [firstIngredient, secondIngredient] = pizzaToppings
+const [firstIngredient, secondIngredient] = pizzaToppings;
 
-console.log(firstIngredient)
-console.log(secondIngredient)
-
-
+console.log(firstIngredient);
+console.log(secondIngredient);
 
 
-// ! Exercise 3: Destructuring objects
+
+
+// Exercise 3: Destructuring objects
 // a. Given the provided `car` object, use destructuring to create two
 //    variables: `make` and `model` that will hold the respective values.
 //
@@ -49,13 +49,13 @@ const car = {
     model: 'Q5',
   };
 
-const {make, model} = car
+const {make, model} = car;
 
-console.log(make)
-console.log(model)
+console.log(make);
+console.log(model);
 
 
-// ! Exercise 4:
+// Exercise 4: Applying the spread operator on arrays
 // a. Duplicate the provided `morePizzaToppings` array using the spread
 //    operator and assign it to a variable named `uncontroversialPizzaToppings`.
 //
@@ -65,13 +65,11 @@ console.log(model)
 
 const morePizzaToppings = ['Cheese', 'Sauce'];
 
-// Your code here:
-
-const uncontroversialPizzaToppings = [...morePizzaToppings]
-console.log(uncontroversialPizzaToppings)
+const uncontroversialPizzaToppings = [...morePizzaToppings];
+console.log(uncontroversialPizzaToppings);
 
 
-// ! Exercise 5:
+// Exercise 5: Applying the spread operator on objects
 // a. Duplicate the provided `anotherCar` object and spread its values into a
 //    new variable named `myCar`.
 //
@@ -79,25 +77,22 @@ console.log(uncontroversialPizzaToppings)
 //    values.
 //
 // c. Console log both objects and observe the results.
-//
-// Starting code (don't modify this):
+
 
 const anotherCar = {
     make: 'Toyota',
     model: 'RAV4',
   };
 
-  // Your code here:
-
 const myCar = { ...anotherCar };
 myCar.make = 'BMW'
 myCar.model = 'M3'
 
-console.log('My car:', myCar)
+console.log('My car:', myCar);
 
 
 
-// ! Exercise 6:
+// Exercise 6: Dynamic keys in objects
 // a. Define a variable named `propertyName` and assign a string (like
 //    'username', 'age', or 'email') to it.
 //
@@ -107,8 +102,6 @@ console.log('My car:', myCar)
 //    relevant value.
 //
 // d. Console log the `userProfile` object to see the result.
-//
-// Your code here:
 
 const propertyName = 'username';
 
@@ -116,11 +109,11 @@ const userProfile = {
     [propertyName]: 'codeNameRJ',
 }
 
-console.log(userProfile)
+console.log(userProfile);
 
 
 
-// ! Exercise 8:
+// Exercise 8: Default parameters
 // a. Create a function with two parameters, `noun` and `adjective`.
 //
 // b. Give `noun` a default value of "cat" and `adjective` a default value of
@@ -133,13 +126,12 @@ console.log(userProfile)
 
 
 const params = (noun = 'cat', adjective = 'orange') => {
-    console.log(`The ${noun} is ${adjective}`)
+    console.log(`The ${noun} is ${adjective}`);
 
 }
+params('Dog');
 
-params('Dog')
-
-// ! Exercise 9:
+// Exercise 9: Ternary operator
 // a. Convert the following `if...else` statement into a ternary:
 //
 //    if (pizza === 'tasty') {
@@ -153,4 +145,59 @@ const pizza = 'tasty';
 
 const pizzaTaste = pizza === 'tasty' ? 'yum' : 'yuck';
 
-console.log(pizzaTaste)
+console.log(pizzaTaste);
+
+
+// Exercise 10: Boolean gates
+// ! 10.1: Set language
+// a. Construct a single line of code that assigns a default value using the
+//    logical OR operator. This line should match the logic of the following
+//    statement:
+//
+//    "lang is equal to localLangConfig or the default value of English."
+//
+// b. Create a variable called `lang`.
+//
+// c. Assign `lang` the value of localLangConfig or 'en' as a default if
+//    `localLangConfig is falsy.
+//
+// d. Log the value of `lang` to the console.
+
+const localLangConfig = 'fr'; // Change to 'es', 'fr', etc., or leave it `null`.
+
+const lang = localLangConfig || 'en';
+
+console.log(lang);
+
+// ! 10.2: Set website theme
+// Intro: In this exercise, you'll construct a single line of code that assigns
+//        a default value to a variable named `theme` using the logical OR
+//        operator. This line should match the logic of the following statement:
+//
+//        "theme is equal to savedUserTheme or the default value of light."
+//
+// a. Create a variable called `theme`.
+//
+// b. Assign `theme` the value of `savedUserTheme` or 'light' as a default.
+//
+// c. Log the value of `theme` to the console.
+
+
+const savedUserTheme = 'null'; // Change to 'dark', etc., or leave it `null`.
+
+const theme = savedUserTheme || 'light'
+
+console.log(theme);
+
+
+// Exercise 11: Optional chaining
+// a. Use optional chaining in a console.log so that a console log of
+//    `adventurer.cat.age` returns `undefined` instead of an error.
+
+const adventurer = {
+    name: 'Alice',
+  };
+
+let cat = adventurer.cat?.name;
+
+console.log(cat);
